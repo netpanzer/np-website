@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'netpanzer.wsgi.application'
+WSGI_APPLICATION = 'website.wsgi.application'
 
 
 # Database
