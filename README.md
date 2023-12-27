@@ -5,7 +5,7 @@ NetPanzer.io, NetPanzer.com, NetPanzer.com.br
 
 This is a Django application.
 
-- Python 3.10+
+- Python 3.11 (runs on 3.11 in prod)
 - DB is bundled - sqlite
 
 ### Setup
