@@ -11,4 +11,4 @@ python3.11 manage.py collectstatic --skip-checks --no-input
           --access-logfile - \
           --error-logfile - \
           --workers 1 \
-          website.wsgi:application
+          netpanzer.wsgi:application
