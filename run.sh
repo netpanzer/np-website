@@ -3,7 +3,7 @@
 
 python3.11 -m venv env
 source env/bin/activate
-pip install -r requirements.txt
+pip3.11 install -r requirements.txt
 
 python3.11 manage.py migrate
 python3.11 manage.py collectstatic --skip-checks --no-input
