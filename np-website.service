@@ -1,0 +1,14 @@
+[Unit]
+Description=The NetPanzer.* Website and Application
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=winrid
+WorkingDirectory=/home/winrid/np-website
+ExecStart=/home/winrid/np-website/run.sh
+
+[Install]
+WantedBy=multi-user.target
