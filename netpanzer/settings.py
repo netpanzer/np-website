@@ -31,7 +31,12 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # DEBUG = 'DEBUG' in os.environ and os.environ['DEBUG'] == 'True'
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "netpanzer.io",
+    "netpanzer.com",
+    "netpanzer.com.br",
+    "netpanzer.info",
+]
 
 
 # Application definition
