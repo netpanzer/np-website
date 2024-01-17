@@ -36,6 +36,5 @@ urlpatterns = [
     path('blog.html', blog, name='blog'),
     path('downloads.html', downloads, name='downloads'),
     path('chat.html', chat, name='chat'),
-    path('index.html', homepage, name='homepage'),
     
 ]
