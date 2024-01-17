@@ -24,7 +24,6 @@ from website.views import ranking
 from website.views import blog
 from website.views import downloads
 from website.views import chat
-from website.views import homepage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
