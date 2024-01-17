@@ -17,8 +17,25 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from website.views import index
+from website.views import history
+from website.views import servers
+from website.views import clans
+from website.views import ranking
+from website.views import blog
+from website.views import downloads
+from website.views import chat
+from website.views import homepage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index'),  # Adicione esta linha para a página inicial
+    path('', index, name='index'), 
+    path('history.html', history, name='history'),
+    path('servers.html', servers, name='servers'),
+    path('clans.html', clans, name='clans'),
+    path('ranking.html', ranking, name='ranking'),
+    path('blog.html', blog, name='blog'),
+    path('downloads.html', downloads, name='downloads'),
+    path('chat.html', chat, name='chat'),
+    path('index.html', homepage, name='homepage'),
+    
 ]
