@@ -24,6 +24,3 @@ def downloads(request):
 
 def chat(request):
     return render(request, 'chat.html')
-
-def homepage(request):
-    return render(request, 'index.html')
