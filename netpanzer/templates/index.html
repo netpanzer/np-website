@@ -1,756 +1,672 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Netpanzer - Batalha de tanques online - index</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="{% static 'favicon.png' %}" rel="icon">
-  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
-
-
-  <!-- =======================================================
-  * Template Name: Presento
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/presento-bootstrap-corporate-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-
-
-</head>
-
-<body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center">
-      <h1 class="logo me-auto"><a href="index.html">NETPANZER</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="/static/assets/img/logo.png" alt=""></a>-->
-
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Início</a></li>
-          <li><a class="nav-link scrollto" href="./history.html">História</a></li>
-          <li><a class="nav-link scrollto" href="./servers.html">Servidores</a></li>
-          <li><a class="nav-link scrollto" href="./ranking.html">Ranking</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a class="nav-link scrollto" href="./clans.html">Clans</a></li>
-          <li><a class="nav-link scrollto" href="./chat.html">Chat</a></li>
-          <li><a class="nav-link scrollto" href="https://github.com" target="_blank">Github</a></li>
-          <li><a class="nav-link scrollto" href="https://discord.gg/rEzgAuBNxa" target="_blank">Discord</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-      <a href="./downloads.html" class="get-started-btn scrollto">Download</a>
-    </div>
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-
-    <div class="container" data-aos="zoom-out" data-aos-delay="100">
-      <div class="row">
-        <div class="col-xl-6">
-          <h1>Explore um Mundo de Tanques e Estratégia!</h1>
-          <h2>Junte-se à comunidade de jogadores de NetPanzer e prove sua habilidade tática nas batalhas de tanques.
-          </h2>
-          <a href="{% static 'assets/game/instalador-netpanzer.msi' %}" class="btn-get-started scrollto">Download</a>
-        </div>
-      </div>
-    </div>
-
-  </section><!-- End Hero -->
-
-  <!-- ======= Tabs Section ======= -->
-  <section id="tabs" class="tabs">
-    <div class="container" data-aos="fade-up">
-
-      <ul class="nav nav-tabs row d-flex">
-        <li class="nav-item col-3">
-          <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
-            <i class="iconify" data-icon="game-icons:barracks" data-inline="false"></i>
-            <h4 class="d-none d-lg-block">Domine a Arte da Guerra</h4>
-          </a>
-        </li>
-        <li class="nav-item col-3">
-          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
-            <i class="iconify" data-icon="game-icons:tank-tread" data-inline="false"></i>
-            <h4 class="d-none d-lg-block">Estratégia, Combates Épicos</h4>
-          </a>
-        </li>
-        <li class="nav-item col-3">
-          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
-            <i class="iconify" data-icon="game-icons:battle-tank" data-inline="false"></i>
-            <h4 class="d-none d-lg-block">Construa, Lute e Reinvente suas taticas</h4>
-          </a>
-        </li>
-        <li class="nav-item col-3">
-          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
-            <i class="iconify" data-icon="game-icons:great-war-tank" data-inline="false"></i>
-            <h4 class="d-none d-lg-block">Desafie alguem para um fight</h4>
-          </a>
-        </li>
-      </ul>
-
-      <div class="tab-content">
-        <div class="tab-pane active show" id="tab-1">
-          <div class="row">
-            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-              <h3>Domine o Campo de Batalha do Netpanzer</h3>
-              <p>
-                No coração do conflito, onde a estratégia e a ação se encontram, surge o Netpanzer – o jogo onde sua
-                habilidade em comandar tanques de guerra define o destino das batalhas. Cada decisão conta, cada
-                movimento pode ser o último, e somente os mais astutos sairão vitoriosos.
-              </p>
-              <p class="fst-italic">
-                Estratégia em Tempo Real: Planeje seu ataque e defesa com uma visão top-down do campo de batalha.
-                Escolha o melhor terreno e posicione seus tanques para tirar vantagem dos pontos fracos do inimigo.
-              </p>
-              <ul>
-                <li><i class="ri-check-double-line"></i> Prepare seus tanques, elabore suas táticas e entre na ação,
-                  porque o NetPanzer está de volta e pronto para desafiar novos e antigos jogadores. Junte-se à
-                  comunidade online e torne-se parte de uma aventura que transcende o tempo, onde a estratégia é a chave
-                  para a vitória e a diversão é garantida.</li>
-              </ul>
-            </div>
-            <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
-              <img src="/static/assets/img/tabs-1.jpg" alt="" class="img-fluid">
-            </div>
-          </div>
-        </div>
-        <div class="tab-pane" id="tab-2">
-          <div class="row">
-            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-              <h3>Domine o Campo de Batalha do Netpanzer</h3>
-              <p>
-                No coração do conflito, onde a estratégia e a ação se encontram, surge o Netpanzer – o jogo onde sua
-                habilidade em comandar tanques de guerra define o destino das batalhas. Cada decisão conta, cada
-                movimento pode ser o último, e somente os mais astutos sairão vitoriosos.
-              </p>
-              <p class="fst-italic">
-                Estratégia em Tempo Real: Planeje seu ataque e defesa com uma visão top-down do campo de batalha.
-                Escolha o melhor terreno e posicione seus tanques para tirar vantagem dos pontos fracos do inimigo.
-              </p>
-              <ul>
-                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla
-                  pariatur.</li>
-              </ul>
-            </div>
-            <div class="col-lg-6 order-1 order-lg-2 text-center">
-              <img src="/static/assets/img/tabs-2.jpg" alt="" class="img-fluid">
-            </div>
-          </div>
-        </div>
-        <div class="tab-pane" id="tab-3">
-          <div class="row">
-            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-              <h3>Domine o Campo de Batalha do Netpanzer</h3>
-              <p>
-                No coração do conflito, onde a estratégia e a ação se encontram, surge o Netpanzer – o jogo onde sua
-                habilidade em comandar tanques de guerra define o destino das batalhas. Cada decisão conta, cada
-                movimento pode ser o último, e somente os mais astutos sairão vitoriosos.
-              </p>
-              <p class="fst-italic">
-                Estratégia em Tempo Real: Planeje seu ataque e defesa com uma visão top-down do campo de batalha.
-                Escolha o melhor terreno e posicione seus tanques para tirar vantagem dos pontos fracos do inimigo.
-              </p>
-              <ul>
-                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla
-                  pariatur.</li>
-              </ul>
-            </div>
-            <div class="col-lg-6 order-1 order-lg-2 text-center">
-              <img src="/static/assets/img/tabs-3.jpg" alt="" class="img-fluid">
-            </div>
-          </div>
-        </div>
-        <div class="tab-pane" id="tab-4">
-          <div class="row">
-            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-              <h3>Domine o Campo de Batalha do Netpanzer</h3>
-              <p>
-                No coração do conflito, onde a estratégia e a ação se encontram, surge o Netpanzer – o jogo onde sua
-                habilidade em comandar tanques de guerra define o destino das batalhas. Cada decisão conta, cada
-                movimento pode ser o último, e somente os mais astutos sairão vitoriosos.
-              </p>
-              <p class="fst-italic">
-                Estratégia em Tempo Real: Planeje seu ataque e defesa com uma visão top-down do campo de batalha.
-                Escolha o melhor terreno e posicione seus tanques para tirar vantagem dos pontos fracos do inimigo.
-              </p>
-              <ul>
-                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla
-                  pariatur.</li>
-              </ul>
-            </div>
-            <div class="col-lg-6 order-1 order-lg-2 text-center">
-              <img src="/static/assets/img/tabs-4.jpg" alt="" class="img-fluid">
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section><!-- End Tabs Section -->
-
-
-  <!-- ======= sobre Section ======= -->
-  <section id="sobre" class="sobre section-bg ">
-    <div class="container" data-aos="fade-up">
-
-      <div class="section-title">
-        <h2>sobre</h2>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6">
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-            <i class="bi bi-pin-map-fill"></i>
-            <h4><a>A nostalgia está de volta! NetPanzer retorna após anos para trazer de volta a era de ouro dos jogos
-                retrô.</a></h4>
-          </div>
-        </div>
-        <div class="col-md-6 mt-4 mt-md-0">
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-            <i class="bi bi-people"></i>
-            <h4><a>Jogue com amigos e rivais em batalhas multiplayer intensas, onde a habilidade tática é a chave para a
-                vitória.</a></h4>
-          </div>
-        </div>
-        <div class="col-md-6 mt-4 mt-md-0">
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-            <i class="bi bi-emoji-smile"></i>
-            <h4><a>Você é a voz do NetPanzer! Conte a todos sobre o jogo e ajude-nos a criar uma legião de comandantes
-                de tanques entusiasmados.</a></h4>
-          </div>
-        </div>
-        <div class="col-md-6 mt-4 mt-md-0">
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-            <i class="bi bi-wechat"></i>
-            <h4><a>Nossa comunidade unida do NetPanzer nunca permitiu que o jogo morresse, mantendo a chama da
-                estratégia e da diversão acesa ao longo dos anos.</a></h4>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    </div>
-  </section><!-- End sobre Section -->
-
-
-  <!-- ======= batalha Section ======= -->
-  <section id="batalha" class="batalha">
-    <div class="container" data-aos="fade-up">
-
-      <div class="section-title">
-        <h2>Batalhas</h2>
-        <p>Domine o Campo de Batalha e Prove que Você é o Comandante Supremo dos Tanques!</p>
-      </div>
-
-
-
-      <div class="row batalha-container" data-aos="fade-up" data-aos-delay="200">
-
-        <div class="col-lg-4 col-md-6 batalha-item filter-app">
-          <div class="batalha-wrap">
-            <img src="/static/assets/img/batalha/batalha-1.jpg" class="img-fluid" alt="">
-            <div class="batalha-info">
-              <div class="batalha-links">
-                <a href="/static/assets/img/batalha/batalha-1.jpg" data-gallery="batalhaGallery" class="batalha-lightbox"><i
-                    class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 batalha-item filter-web">
-          <div class="batalha-wrap">
-            <img src="/static/assets/img/batalha/batalha-2.jpg" class="img-fluid" alt="">
-            <div class="batalha-info">
-              <div class="batalha-links">
-                <a href="/static/assets/img/batalha/batalha-2.jpg" data-gallery="batalhaGallery" class="batalha-lightbox"><i
-                    class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 batalha-item filter-app">
-          <div class="batalha-wrap">
-            <img src="/static/assets/img/batalha/batalha-3.jpg" class="img-fluid" alt="">
-            <div class="batalha-info">
-              <div class="batalha-links">
-                <a href="/static/assets/img/batalha/batalha-3.jpg" data-gallery="batalhaGallery" class="batalha-lightbox"><i
-                    class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 batalha-item filter-card">
-          <div class="batalha-wrap">
-            <img src="/static/assets/img/batalha/batalha-4.jpg" class="img-fluid" alt="">
-            <div class="batalha-info">
-              <div class="batalha-links">
-                <a href="/static/assets/img/batalha/batalha-4.jpg" data-gallery="batalhaGallery" class="batalha-lightbox"><i
-                    class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 batalha-item filter-web">
-          <div class="batalha-wrap">
-            <img src="/static/assets/img/batalha/batalha-5.jpg" class="img-fluid" alt="">
-            <div class="batalha-info">
-              <div class="batalha-links">
-                <a href="/static/assets/img/batalha/batalha-5.jpg" data-gallery="batalhaGallery" class="batalha-lightbox"><i
-                    class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 batalha-item filter-app">
-          <div class="batalha-wrap">
-            <img src="/static/assets/img/batalha/batalha-6.jpg" class="img-fluid" alt="">
-            <div class="batalha-info">
-              <div class="batalha-links">
-                <a href="/static/assets/img/batalha/batalha-6.jpg" data-gallery="batalhaGallery" class="batalha-lightbox"><i
-                    class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 batalha-item filter-card">
-          <div class="batalha-wrap">
-            <img src="/static/assets/img/batalha/batalha-7.jpg" class="img-fluid" alt="">
-            <div class="batalha-info">
-              <div class="batalha-links">
-                <a href="/static/assets/img/batalha/batalha-7.jpg" data-gallery="batalhaGallery" class="batalha-lightbox"><i
-                    class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 batalha-item filter-card">
-          <div class="batalha-wrap">
-            <img src="/static/assets/img/batalha/batalha-8.jpg" class="img-fluid" alt="">
-            <div class="batalha-info">
-              <div class="batalha-links">
-                <a href="/static/assets/img/batalha/batalha-8.jpg" data-gallery="batalhaGallery" class="batalha-lightbox"><i
-                    class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 batalha-item filter-web">
-          <div class="batalha-wrap">
-            <img src="/static/assets/img/batalha/batalha-9.jpg" class="img-fluid" alt="">
-            <div class="batalha-info">
-              <div class="batalha-links">
-                <a href="/static/assets/img/batalha/batalha-9.jpg" data-gallery="batalhaGallery" class="batalha-lightbox"><i
-                    class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section><!-- End batalha Section -->
-
-  <!-- ======= Testimonials Section ======= -->
-  <section id="testimonials" class="testimonials">
-    <div class="container" data-aos="fade-up">
-      <div class="section-title">
-        <h2>Comentários</h2>
-        <p>Depoimentos de Guerreiros de Tanques Reais</p>
-      </div>
-
-      <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-        <div class="swiper-wrapper">
-
-          <div class="swiper-slide">
-            <div class="testimonial-wrap">
-              <div class="testimonial-item">
-                <h3>Rodrigo Silva</h3>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  NetPanzer é um verdadeiro clássico. Desde que o jogo retornou, tenho revivido a emoção das batalhas de
-                  tanques como nunca antes.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-          </div><!-- End testimonial item -->
-
-          <div class="swiper-slide">
-            <div class="testimonial-wrap">
-              <div class="testimonial-item">
-                <h3>André Luiz</h3>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  A comunidade de NetPanzer é uma irmandade de estrategistas. Estou orgulhoso de fazer parte disso.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-          </div><!-- End testimonial item -->
-
-          <div class="swiper-slide">
-            <div class="testimonial-wrap">
-              <div class="testimonial-item">
-                <h3>José Fernando</h3>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Sinto que NetPanzer é como um vinho fino, melhorando com o tempo. É uma joia dos jogos retrô.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-          </div><!-- End testimonial item -->
-
-          <div class="swiper-slide">
-            <div class="testimonial-wrap">
-              <div class="testimonial-item">
-                <h3>Rafael Oliveira</h3>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Como jogador veterano de NetPanzer, vejo a dedicação da comunidade como inspiradora. É bom ver um jogo
-                  retrô como este se mantendo forte.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-          </div><!-- End testimonial item -->
-
-          <div class="swiper-slide">
-            <div class="testimonial-wrap">
-              <div class="testimonial-item">
-                <h3>Carlos Rodrigues</h3>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa
-                  labore duis sunt culpa nulla illum cillum fugiat esse veniam culpa fore nisi cillum quid.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-          </div><!-- End testimonial item -->
-
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
-
-    </div>
-  </section><!-- End Testimonials Section -->
-
-
-
-  <!-- ======= Frequently Asked Questions Section ======= -->
-  <section id="faq" class="faq">
-    <div class="container" data-aos="fade-up">
-
-      <div class="section-title">
-        <h2>Perguntas frequentes</h2>
-      </div>
-
-      <ul class="faq-list accordion" data-aos="fade-up">
-
-        <li>
-          <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#faq1">O que é o NetPanzer? <i
-              class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
-          <div id="faq1" class="collapse" data-bs-parent=".faq-list">
-            <p>
-              O NetPanzer é um jogo de estratégia em tempo real que envolve batalhas de tanques em um ambiente
-              isométrico. É um jogo multiplayer online com foco em táticas e estratégias.
-            </p>
-          </div>
-        </li>
-
-        <li>
-          <a data-bs-toggle="collapse" data-bs-target="#faq2" class="collapsed">Como faço para jogar o NetPanzer? <i
-              class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
-          <div id="faq2" class="collapse" data-bs-parent=".faq-list">
-            <p>
-              Você pode jogar NetPanzer baixando-o gratuitamente no site oficial do jogo ou em repositórios de jogos
-              online. Após o download, basta instalar e criar uma conta para começar a jogar.
-            </p>
-          </div>
-        </li>
-
-        <li>
-          <a data-bs-toggle="collapse" data-bs-target="#faq3" class="collapsed">Quais são os requisitos de sistema para
-            jogar NetPanzer? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
-          <div id="faq3" class="collapse" data-bs-parent=".faq-list">
-            <p>
-              Os requisitos de sistema são relativamente baixos. Você precisa de um computador com um sistema
-              operacional compatível (como Windows, Linux) e conexão com a internet.
-            </p>
-          </div>
-        </li>
-
-        <li>
-          <a data-bs-toggle="collapse" data-bs-target="#faq4" class="collapsed">Existe uma comunidade ativa de jogadores
-            de NetPanzer? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
-          <div id="faq4" class="collapse" data-bs-parent=".faq-list">
-            <p>
-              Sim, há uma comunidade ativa de jogadores de NetPanzer. Você pode participar de fóruns, chats online e
-              discutir estratégias com outros jogadores.
-            </p>
-          </div>
-        </li>
-
-        <li>
-          <a data-bs-toggle="collapse" data-bs-target="#faq5" class="collapsed">Como posso colaborar no desenvolvimento
-            ? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
-          <div id="faq5" class="collapse" data-bs-parent=".faq-list">
-            <p>
-              Se você é um desenvolvedor e gostaria de nós ajudar, acesso nossa pagina de repositórios<a
-                href="./repository.html">Clique aqui.</a>
-            </p>
-          </div>
-        </li>
-
-        <li>
-          <a data-bs-toggle="collapse" data-bs-target="#faq6" class="collapsed">Como posso ajudar sem ter conhecimento
-            em desenvolvimento ? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
-          <div id="faq6" class="collapse" data-bs-parent=".faq-list">
-            <p>
-              Propague netpanzer para mais pessoas nós ajude comentando nas mídias sociais.
-            </p>
-          </div>
-        </li>
-
-
-      </ul>
-
-    </div>
-  </section><!-- End Frequently Asked Questions Section -->
-
-  <!-- ======= Team Section ======= -->
-  <section id="team" class="team section-bg">
-    <div class="container" data-aos="fade-up">
-
-      <div class="section-title">
-        <h2>Ultimos Colaboradores</h2>
-        <p>"Nossa equipe nunca deixou de viver os velhos momentos do jogo, mantendo a paixão pelo NetPanzer tão intensa
-          quanto no primeiro dia, e é isso que nos motiva a continuar a tradição."</p>
-      </div>
-
-      <div class="row">
-
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-          <div class="member" data-aos="fade-up" data-aos-delay="100">
-            <div class="member-img">
-              <img src="{% static 'assets/img/team/team-1.jpg' %}" class="img-fluid" alt="">
-              <div class="social">
-              </div>
-            </div>
-            <div class="member-info">
-              <h4>Devon Winrick</h4>
-              <span>Game Developer</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-          <div class="member" data-aos="fade-up" data-aos-delay="200">
-            <div class="member-img">
-              <img src="{% static 'assets/img/team/team-2.jpg' %}" class="img-fluid" alt="">
-              <div class="social">
-              </div>
-            </div>
-            <div class="member-info">
-              <h4>Phelipe Silva</h4>
-              <span>Website Developer</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-          <div class="member" data-aos="fade-up" data-aos-delay="300">
-            <div class="member-img">
-              <img src="{% static 'assets/img/team/team-3.jpg' %}" class="img-fluid" alt="">
-              <div class="social">
-              </div>
-            </div>
-            <div class="member-info">
-              <h4>Gilmar de Souza</h4>
-              <span>Publication</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-          <div class="member" data-aos="fade-up" data-aos-delay="400">
-            <div class="member-img">
-              <img src="{% static 'assets/img/team/team-4.jpg' %}" class="img-fluid" alt="">
-              <div class="social">
-              </div>
-            </div>
-            <div class="member-info">
-              <h4>Fulvio</h4>
-              <span>Game Developer</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section><!-- End Team Section -->
-
-  <!-- ======= Contact Section ======= -->
-  <section id="contact" class="contact">
-    <div class="container" data-aos="fade-up">
-
-      <div class="section-title">
-        <h2>Contato</h2>
-        <p>
-          "Se você deseja entrar em contato conosco, estamos sempre aqui para ouvir seus comentários, sugestões e
-          histórias emocionantes sobre NetPanzer. Juntos, construímos uma comunidade forte!"</p>
-      </div>
-
-      <div class="row" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="col-lg-6">
-
-          <div class="row">
-            <div class="col-md-12">
-              <div class="info-box">
-                <i class="bx bx-envelope"></i>
-                <h3>Email</h3>
-                <p>contato@netpanzer.com.br<br>contato@netpanzer.com.br</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12">
-              <div class="info-box">
-                <i class="iconify" data-icon="game-icons:envelope" data-inline="false" style="color:#e03a3c"></i>
-                <h3>Whatsapp</h3>
-                <p><a href="https://chat.whatsapp.com/8CJHyZAzc4XKgbm4CkVpWJ">Clique aqui.</a></p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="col-lg-6">
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+{% block title %}
+    Netpanzer - Batalha de tanques online
+{% endblock %}
+{% block content %}
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+
+        <div class="container" data-aos="zoom-out" data-aos-delay="100">
             <div class="row">
-              <div class="col form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Seu nome" required>
-              </div>
-              <div class="col form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Seu e-mail" required>
-              </div>
+                <div class="col-xl-6">
+                    <h1>Explore um Mundo de Tanques e Estratégia!</h1>
+                    <h2>Junte-se à comunidade de jogadores de NetPanzer e prove sua habilidade tática nas batalhas de
+                        tanques.
+                    </h2>
+                    <a href="{% static 'assets/game/instalador-netpanzer.msi' %}" class="btn-get-started scrollto">Download</a>
+                </div>
             </div>
-            <div class="form-group">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Assunto" required>
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" placeholder="Mensagem" required></textarea>
-            </div>
-            <div class="my-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-            </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
-          </form>
         </div>
 
-      </div>
+    </section><!-- End Hero -->
 
-    </div>
-  </section><!-- End Contact Section -->
+    <!-- ======= Tabs Section ======= -->
+    <section id="tabs" class="tabs">
+        <div class="container" data-aos="fade-up">
 
-  </main><!-- End #main -->
+            <ul class="nav nav-tabs row d-flex">
+                <li class="nav-item col-3">
+                    <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
+                        <i class="iconify" data-icon="game-icons:barracks" data-inline="false"></i>
+                        <h4 class="d-none d-lg-block">Domine a Arte da Guerra</h4>
+                    </a>
+                </li>
+                <li class="nav-item col-3">
+                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
+                        <i class="iconify" data-icon="game-icons:tank-tread" data-inline="false"></i>
+                        <h4 class="d-none d-lg-block">Estratégia, Combates Épicos</h4>
+                    </a>
+                </li>
+                <li class="nav-item col-3">
+                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
+                        <i class="iconify" data-icon="game-icons:battle-tank" data-inline="false"></i>
+                        <h4 class="d-none d-lg-block">Construa, Lute e Reinvente suas taticas</h4>
+                    </a>
+                </li>
+                <li class="nav-item col-3">
+                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
+                        <i class="iconify" data-icon="game-icons:great-war-tank" data-inline="false"></i>
+                        <h4 class="d-none d-lg-block">Desafie alguem para um fight</h4>
+                    </a>
+                </li>
+            </ul>
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
+            <div class="tab-content">
+                <div class="tab-pane active show" id="tab-1">
+                    <div class="row">
+                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <h3>Domine o Campo de Batalha do Netpanzer</h3>
+                            <p>
+                                No coração do conflito, onde a estratégia e a ação se encontram, surge o Netpanzer – o
+                                jogo onde sua
+                                habilidade em comandar tanques de guerra define o destino das batalhas. Cada decisão
+                                conta, cada
+                                movimento pode ser o último, e somente os mais astutos sairão vitoriosos.
+                            </p>
+                            <p class="fst-italic">
+                                Estratégia em Tempo Real: Planeje seu ataque e defesa com uma visão top-down do campo de
+                                batalha.
+                                Escolha o melhor terreno e posicione seus tanques para tirar vantagem dos pontos fracos
+                                do inimigo.
+                            </p>
+                            <ul>
+                                <li><i class="ri-check-double-line"></i> Prepare seus tanques, elabore suas táticas e
+                                    entre na ação,
+                                    porque o NetPanzer está de volta e pronto para desafiar novos e antigos jogadores.
+                                    Junte-se à
+                                    comunidade online e torne-se parte de uma aventura que transcende o tempo, onde a
+                                    estratégia é a chave
+                                    para a vitória e a diversão é garantida.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
+                            <img src="/static/assets/img/tabs-1.jpg" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab-2">
+                    <div class="row">
+                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <h3>Domine o Campo de Batalha do Netpanzer</h3>
+                            <p>
+                                No coração do conflito, onde a estratégia e a ação se encontram, surge o Netpanzer – o
+                                jogo onde sua
+                                habilidade em comandar tanques de guerra define o destino das batalhas. Cada decisão
+                                conta, cada
+                                movimento pode ser o último, e somente os mais astutos sairão vitoriosos.
+                            </p>
+                            <p class="fst-italic">
+                                Estratégia em Tempo Real: Planeje seu ataque e defesa com uma visão top-down do campo de
+                                batalha.
+                                Escolha o melhor terreno e posicione seus tanques para tirar vantagem dos pontos fracos
+                                do inimigo.
+                            </p>
+                            <ul>
+                                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo
+                                    consequat. Duis
+                                    aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore
+                                    eu fugiat nulla
+                                    pariatur.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2 text-center">
+                            <img src="/static/assets/img/tabs-2.jpg" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab-3">
+                    <div class="row">
+                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <h3>Domine o Campo de Batalha do Netpanzer</h3>
+                            <p>
+                                No coração do conflito, onde a estratégia e a ação se encontram, surge o Netpanzer – o
+                                jogo onde sua
+                                habilidade em comandar tanques de guerra define o destino das batalhas. Cada decisão
+                                conta, cada
+                                movimento pode ser o último, e somente os mais astutos sairão vitoriosos.
+                            </p>
+                            <p class="fst-italic">
+                                Estratégia em Tempo Real: Planeje seu ataque e defesa com uma visão top-down do campo de
+                                batalha.
+                                Escolha o melhor terreno e posicione seus tanques para tirar vantagem dos pontos fracos
+                                do inimigo.
+                            </p>
+                            <ul>
+                                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo
+                                    consequat. Duis
+                                    aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore
+                                    eu fugiat nulla
+                                    pariatur.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2 text-center">
+                            <img src="/static/assets/img/tabs-3.jpg" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab-4">
+                    <div class="row">
+                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <h3>Domine o Campo de Batalha do Netpanzer</h3>
+                            <p>
+                                No coração do conflito, onde a estratégia e a ação se encontram, surge o Netpanzer – o
+                                jogo onde sua
+                                habilidade em comandar tanques de guerra define o destino das batalhas. Cada decisão
+                                conta, cada
+                                movimento pode ser o último, e somente os mais astutos sairão vitoriosos.
+                            </p>
+                            <p class="fst-italic">
+                                Estratégia em Tempo Real: Planeje seu ataque e defesa com uma visão top-down do campo de
+                                batalha.
+                                Escolha o melhor terreno e posicione seus tanques para tirar vantagem dos pontos fracos
+                                do inimigo.
+                            </p>
+                            <ul>
+                                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo
+                                    consequat. Duis
+                                    aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore
+                                    eu fugiat nulla
+                                    pariatur.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2 text-center">
+                            <img src="/static/assets/img/tabs-4.jpg" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-
-
-    <div class="container d-md-flex py-4">
-
-      <div class="me-md-auto text-center text-md-start">
-        <div class="copyright">
-          &copy; Copyright <strong><span></span></strong>. Todos os direitos reservados <a href="./files.html">Licenças
-            de uso (Clique aqui)</a>
         </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/presento-bootstrap-corporate-template/ -->
-          Designed by <a href="https://google.com/">RipChip</a>
+    </section><!-- End Tabs Section -->
+
+
+    <!-- ======= sobre Section ======= -->
+    <section id="sobre" class="sobre section-bg ">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>sobre</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                        <i class="bi bi-pin-map-fill"></i>
+                        <h4><a>A nostalgia está de volta! NetPanzer retorna após anos para trazer de volta a era de ouro
+                            dos jogos
+                            retrô.</a></h4>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4 mt-md-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                        <i class="bi bi-people"></i>
+                        <h4><a>Jogue com amigos e rivais em batalhas multiplayer intensas, onde a habilidade tática é a
+                            chave para a
+                            vitória.</a></h4>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4 mt-md-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                        <i class="bi bi-emoji-smile"></i>
+                        <h4><a>Você é a voz do NetPanzer! Conte a todos sobre o jogo e ajude-nos a criar uma legião de
+                            comandantes
+                            de tanques entusiasmados.</a></h4>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4 mt-md-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+                        <i class="bi bi-wechat"></i>
+                        <h4><a>Nossa comunidade unida do NetPanzer nunca permitiu que o jogo morresse, mantendo a chama
+                            da
+                            estratégia e da diversão acesa ao longo dos anos.</a></h4>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="social-links text-center text-md-end pt-3 pt-md-0">
-        <a href="https://www.facebook.com/netpanzeiroswar" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="https://www.instagram.comofc/" class="instagram"><i class="bx bxl-instagram"></i></a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
-  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
-  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
-  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+        </div>
+    </section><!-- End sobre Section -->
 
 
+    <!-- ======= batalha Section ======= -->
+    <section id="batalha" class="batalha">
+        <div class="container" data-aos="fade-up">
 
-  <!-- Template Main JS File -->
-  <script src="{% static 'assets/js/main.js' %}"></script>
+            <div class="section-title">
+                <h2>Batalhas</h2>
+                <p>Domine o Campo de Batalha e Prove que Você é o Comandante Supremo dos Tanques!</p>
+            </div>
 
-</body>
 
-</html>
+            <div class="row batalha-container" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="col-lg-4 col-md-6 batalha-item filter-app">
+                    <div class="batalha-wrap">
+                        <img src="/static/assets/img/batalha/batalha-1.jpg" class="img-fluid" alt="">
+                        <div class="batalha-info">
+                            <div class="batalha-links">
+                                <a href="/static/assets/img/batalha/batalha-1.jpg" data-gallery="batalhaGallery"
+                                   class="batalha-lightbox"><i
+                                        class="bx bx-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 batalha-item filter-web">
+                    <div class="batalha-wrap">
+                        <img src="/static/assets/img/batalha/batalha-2.jpg" class="img-fluid" alt="">
+                        <div class="batalha-info">
+                            <div class="batalha-links">
+                                <a href="/static/assets/img/batalha/batalha-2.jpg" data-gallery="batalhaGallery"
+                                   class="batalha-lightbox"><i
+                                        class="bx bx-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 batalha-item filter-app">
+                    <div class="batalha-wrap">
+                        <img src="/static/assets/img/batalha/batalha-3.jpg" class="img-fluid" alt="">
+                        <div class="batalha-info">
+                            <div class="batalha-links">
+                                <a href="/static/assets/img/batalha/batalha-3.jpg" data-gallery="batalhaGallery"
+                                   class="batalha-lightbox"><i
+                                        class="bx bx-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 batalha-item filter-card">
+                    <div class="batalha-wrap">
+                        <img src="/static/assets/img/batalha/batalha-4.jpg" class="img-fluid" alt="">
+                        <div class="batalha-info">
+                            <div class="batalha-links">
+                                <a href="/static/assets/img/batalha/batalha-4.jpg" data-gallery="batalhaGallery"
+                                   class="batalha-lightbox"><i
+                                        class="bx bx-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 batalha-item filter-web">
+                    <div class="batalha-wrap">
+                        <img src="/static/assets/img/batalha/batalha-5.jpg" class="img-fluid" alt="">
+                        <div class="batalha-info">
+                            <div class="batalha-links">
+                                <a href="/static/assets/img/batalha/batalha-5.jpg" data-gallery="batalhaGallery"
+                                   class="batalha-lightbox"><i
+                                        class="bx bx-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 batalha-item filter-app">
+                    <div class="batalha-wrap">
+                        <img src="/static/assets/img/batalha/batalha-6.jpg" class="img-fluid" alt="">
+                        <div class="batalha-info">
+                            <div class="batalha-links">
+                                <a href="/static/assets/img/batalha/batalha-6.jpg" data-gallery="batalhaGallery"
+                                   class="batalha-lightbox"><i
+                                        class="bx bx-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 batalha-item filter-card">
+                    <div class="batalha-wrap">
+                        <img src="/static/assets/img/batalha/batalha-7.jpg" class="img-fluid" alt="">
+                        <div class="batalha-info">
+                            <div class="batalha-links">
+                                <a href="/static/assets/img/batalha/batalha-7.jpg" data-gallery="batalhaGallery"
+                                   class="batalha-lightbox"><i
+                                        class="bx bx-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 batalha-item filter-card">
+                    <div class="batalha-wrap">
+                        <img src="/static/assets/img/batalha/batalha-8.jpg" class="img-fluid" alt="">
+                        <div class="batalha-info">
+                            <div class="batalha-links">
+                                <a href="/static/assets/img/batalha/batalha-8.jpg" data-gallery="batalhaGallery"
+                                   class="batalha-lightbox"><i
+                                        class="bx bx-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 batalha-item filter-web">
+                    <div class="batalha-wrap">
+                        <img src="/static/assets/img/batalha/batalha-9.jpg" class="img-fluid" alt="">
+                        <div class="batalha-info">
+                            <div class="batalha-links">
+                                <a href="/static/assets/img/batalha/batalha-9.jpg" data-gallery="batalhaGallery"
+                                   class="batalha-lightbox"><i
+                                        class="bx bx-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End batalha Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Comentários</h2>
+                <p>Depoimentos de Guerreiros de Tanques Reais</p>
+            </div>
+
+            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-wrap">
+                            <div class="testimonial-item">
+                                <h3>Rodrigo Silva</h3>
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    NetPanzer é um verdadeiro clássico. Desde que o jogo retornou, tenho revivido a
+                                    emoção das batalhas de
+                                    tanques como nunca antes.
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-wrap">
+                            <div class="testimonial-item">
+                                <h3>André Luiz</h3>
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    A comunidade de NetPanzer é uma irmandade de estrategistas. Estou orgulhoso de fazer
+                                    parte disso.
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-wrap">
+                            <div class="testimonial-item">
+                                <h3>José Fernando</h3>
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    Sinto que NetPanzer é como um vinho fino, melhorando com o tempo. É uma joia dos
+                                    jogos retrô.
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-wrap">
+                            <div class="testimonial-item">
+                                <h3>Rafael Oliveira</h3>
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    Como jogador veterano de NetPanzer, vejo a dedicação da comunidade como inspiradora.
+                                    É bom ver um jogo
+                                    retrô como este se mantendo forte.
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-wrap">
+                            <div class="testimonial-item">
+                                <h3>Carlos Rodrigues</h3>
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster
+                                    veniam enim culpa
+                                    labore duis sunt culpa nulla illum cillum fugiat esse veniam culpa fore nisi cillum
+                                    quid.
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+    </section><!-- End Testimonials Section -->
+
+
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Perguntas frequentes</h2>
+            </div>
+
+            <ul class="faq-list accordion" data-aos="fade-up">
+
+                <li>
+                    <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#faq1">O que é o NetPanzer? <i
+                            class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+                    <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+                        <p>
+                            O NetPanzer é um jogo de estratégia em tempo real que envolve batalhas de tanques em um
+                            ambiente
+                            isométrico. É um jogo multiplayer online com foco em táticas e estratégias.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <a data-bs-toggle="collapse" data-bs-target="#faq2" class="collapsed">Como faço para jogar o
+                        NetPanzer? <i
+                                class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+                    <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+                        <p>
+                            Você pode jogar NetPanzer baixando-o gratuitamente no site oficial do jogo ou em
+                            repositórios de jogos
+                            online. Após o download, basta instalar e criar uma conta para começar a jogar.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <a data-bs-toggle="collapse" data-bs-target="#faq3" class="collapsed">Quais são os requisitos de
+                        sistema para
+                        jogar NetPanzer? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+                    <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+                        <p>
+                            Os requisitos de sistema são relativamente baixos. Você precisa de um computador com um
+                            sistema
+                            operacional compatível (como Windows, Linux) e conexão com a internet.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <a data-bs-toggle="collapse" data-bs-target="#faq4" class="collapsed">Existe uma comunidade ativa de
+                        jogadores
+                        de NetPanzer? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+                    <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+                        <p>
+                            Sim, há uma comunidade ativa de jogadores de NetPanzer. Você pode participar de fóruns,
+                            chats online e
+                            discutir estratégias com outros jogadores.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <a data-bs-toggle="collapse" data-bs-target="#faq5" class="collapsed">Como posso colaborar no
+                        desenvolvimento
+                        ? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+                    <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+                        <p>
+                            Se você é um desenvolvedor e gostaria de nós ajudar, acesso nossa pagina de repositórios<a
+                                href="./repository.html">Clique aqui.</a>
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <a data-bs-toggle="collapse" data-bs-target="#faq6" class="collapsed">Como posso ajudar sem ter
+                        conhecimento
+                        em desenvolvimento ? <i class="bx bx-chevron-down icon-show"></i><i
+                                class="bx bx-x icon-close"></i></a>
+                    <div id="faq6" class="collapse" data-bs-parent=".faq-list">
+                        <p>
+                            Propague netpanzer para mais pessoas nós ajude comentando nas mídias sociais.
+                        </p>
+                    </div>
+                </li>
+
+
+            </ul>
+
+        </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Ultimos Colaboradores</h2>
+                <p>"Nossa equipe nunca deixou de viver os velhos momentos do jogo, mantendo a paixão pelo NetPanzer tão
+                    intensa
+                    quanto no primeiro dia, e é isso que nos motiva a continuar a tradição."</p>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member-img">
+                            <img src="{% static 'assets/img/team/team-1.jpg' %}" class="img-fluid" alt="">
+                            <div class="social">
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Devon Winrick</h4>
+                            <span>Game Developer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up" data-aos-delay="200">
+                        <div class="member-img">
+                            <img src="{% static 'assets/img/team/team-2.jpg' %}" class="img-fluid" alt="">
+                            <div class="social">
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Phelipe Silva</h4>
+                            <span>Website Developer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up" data-aos-delay="300">
+                        <div class="member-img">
+                            <img src="{% static 'assets/img/team/team-3.jpg' %}" class="img-fluid" alt="">
+                            <div class="social">
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Gilmar de Souza</h4>
+                            <span>Publication</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up" data-aos-delay="400">
+                        <div class="member-img">
+                            <img src="{% static 'assets/img/team/team-4.jpg' %}" class="img-fluid" alt="">
+                            <div class="social">
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Fulvio</h4>
+                            <span>Game Developer</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Team Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Contato</h2>
+                <p>
+                    "Se você deseja entrar em contato conosco, estamos sempre aqui para ouvir seus comentários,
+                    sugestões e
+                    histórias emocionantes sobre NetPanzer. Juntos, construímos uma comunidade forte!"</p>
+            </div>
+
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="col-lg-12">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="info-box">
+                                <i class="bx bx-envelope"></i>
+                                <h3>Email</h3>
+                                <p>contato@netpanzer.com.br<br>contato@netpanzer.com.br</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="info-box">
+                                <i class="iconify" data-icon="game-icons:envelope" data-inline="false"
+                                   style="color:#e03a3c"></i>
+                                <h3>Whatsapp</h3>
+                                <p><a href="https://chat.whatsapp.com/8CJHyZAzc4XKgbm4CkVpWJ">Clique aqui.</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Contact Section -->
+{% endblock %}

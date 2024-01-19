@@ -29,8 +29,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = 'DEBUG' in os.environ and os.environ['DEBUG'] == 'True'
-DEBUG = True
+DEBUG = 'DEBUG' in os.environ and os.environ['DEBUG'] == 'True'
+# DEBUG = True
 
 ALLOWED_HOSTS = [
     "netpanzer.io",
@@ -38,6 +38,9 @@ ALLOWED_HOSTS = [
     "netpanzer.com.br",
     "netpanzer.info",
 ]
+
+if DEBUG:
+    ALLOWED_HOSTS.append("localhost")
 
 
 # Application definition

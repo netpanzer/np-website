@@ -28,12 +28,10 @@ from website.views import chat
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'), 
-    path('history.html', history, name='history'),
-    path('servers.html', servers, name='servers'),
-    path('clans.html', clans, name='clans'),
-    path('ranking.html', ranking, name='ranking'),
-    path('blog.html', blog, name='blog'),
-    path('downloads.html', downloads, name='downloads'),
-    path('chat.html', chat, name='chat'),
-    
+    path('history', history, name='history'),
+    path('servers', servers, name='servers'),
+    path('clans', clans, name='clans'),
+    path('ranking', ranking, name='ranking'),
+    path('blog', blog, name='blog'),
+    path('downloads', downloads, name='downloads'),
 ]
