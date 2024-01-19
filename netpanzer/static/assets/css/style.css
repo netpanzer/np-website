@@ -2074,6 +2074,13 @@ section {
   text-decoration: none;
 }
 
+iframe {
+  width: 100vw;
+  height: 2200px;
+  border: none;
+  overflow: hidden;
+}
+
 @media screen and (max-width: 500px) {
   iframe {
     height: 400px; /* Ajuste a altura desejada para telas menores */

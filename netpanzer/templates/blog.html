@@ -1,260 +1,159 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Blog - Netpanzer Game</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="{% static 'favicon.png' %}" rel="icon">
-  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Presento
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/presento-bootstrap-corporate-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
-
-<body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center">
-      <h1 class="logo me-auto"><a href="index.html">NETPANZER</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a>-->
-
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto" href="./index.html">Início</a></li>
-          <li><a class="nav-link scrollto" href="./history.html">História</a></li>
-          <li><a class="nav-link scrollto" href="./servers.html">Servidores</a></li>
-          <li><a class="nav-link scrollto" href="./ranking.html">Ranking</a></li>
-          <li><a Class="nav-link scrollto active" href="blog.html">Blog</a></li>
-          <li><a class="nav-link scrollto" href="./clans.html">Clans</a></li>
-          <li><a class="nav-link scrollto" href="./chat.html">Chat</a></li>
-          <li><a class="nav-link scrollto" href="https://github.com" target="_blank">Github</a></li>
-          <li><a class="nav-link scrollto" href="https://discord.gg/rEzgAuBNxa" target="_blank">Discord</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-      <a href="/downloads.html" class="get-started-btn scrollto">Download</a>
-    </div>
-  </header><!-- End Header -->
-
-  <main id="main">
-
-    <!-- ======= Breadcrumbs ======= -->
+{% block title %}
+    NetPanzer Blog
+{% endblock %}
+{% block content %}
     <section class="breadcrumbs">
-      <div class="container">
-
-        <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Blog</li>
-        </ol>
-        <h2>Blog</h2>
-
-      </div>
+        <div class="container">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li>Blog</li>
+            </ol>
+            <h2>Blog</h2>
+        </div>
     </section><!-- End Breadcrumbs -->
-
-
-
-    <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
-      <div class="container" data-aos="fade-up">
+        <div class="container" data-aos="fade-up">
+            <div class="row">
 
-        
-        <div class="row">
+                <div class="col-lg-8 entries">
 
-          <div class="col-lg-8 entries">
+                    <article class="entry">
+                        <div class="entry-img">
+                            <img src="/static/assets/img/blog/luto.png" alt="" class="img-fluid">
+                        </div>
 
-            <article class="entry">
-              <div class="entry-img">
-                <img src="/static/assets/img/blog/luto.png" alt="" class="img-fluid">
-              </div>
+                        <h2 class="entry-title">
+                            <a>Luto [+P] FU.</a>
+                        </h2>
 
-              <h2 class="entry-title">
-                <a>Luto [+P] FU.</a>
-              </h2>
+                        <div class="entry-meta">
+                            <ul>
+                                <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a>Phelipe
+                                    Figueiredo</a></li>
+                                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a>
+                                    <time datetime="21/12/2023">Dez
+                                        21, 2023
+                                    </time>
+                                </a></li>
+                            </ul>
+                        </div>
 
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a>Phelipe Figueiredo</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a><time datetime="21/12/2023">Dez
-                        21, 2023</time></a></li>
-                </ul>
-              </div>
+                        <div class="entry-content">
+                            <p>
+                                Querida Comunidade Netpanzer,<br>
+                            <p>Com corações pesados e uma profunda gratidão, nos reunimos hoje para prestar homenagem à
+                                memória de Fulvio Testi, conhecido carinhosamente por todos nós como Fu. Fu não foi
+                                apenas o arquiteto por trás do nosso amado Netpanzer, mas também um amigo e inspiração
+                                para toda a nossa comunidade. <br> <br>
+                                Ao longo dos anos, Netpanzer tornou-se mais do que apenas um jogo; transformou-se em um
+                                ponto de encontro para pessoas de todas as partes do mundo, unidas por um interesse
+                                comum e pela paixão que Fu infundiu em cada pixel deste universo virtual. Sua visão
+                                criativa e dedicação não apenas nos proporcionaram horas incontáveis de entretenimento,
+                                mas também forjaram amizades duradouras que transcenderam as fronteiras do jogo.br
+                                <br><br>
+                                Hoje, enquanto lamentamos sua perda, também celebramos o legado que ele deixou para
+                                trás. Netpanzer, um jogo que muitos considerariam antigo, continua vivo e pulsante,
+                                graças à fundação que Fu construiu. Sua obra não é apenas um testamento de seu talento,
+                                mas também um reflexo do calor e da bondade que ele compartilhou com todos nós. <br><br>
+                                Fu, você pode ter nos deixado, mas seu espírito e seu trabalho continuam a brilhar em
+                                cada batalha que travamos, em cada estratégia que elaboramos e em cada risada que
+                                compartilhamos dentro deste mundo que você criou. Sua partida deixa um vazio em nossos
+                                corações, mas também um profundo sentimento de gratidão por tudo que você fez por nós.
+                                <br><br>
+                                À sua família e entes queridos, estendemos nossas mais sinceras condolências e
+                                agradecimentos por compartilhar Fu conosco. Ele pode ter partido, mas seu legado, assim
+                                como as amizades que ele ajudou a forjar, permanecerão conosco para sempre.
+                                <br><br>Com amor e respeito,<br>
+                                A Comunidade Netpanzer</p>
 
-              <div class="entry-content">
-                <p>
-                  Querida Comunidade Netpanzer,<br>
-                  <p>Com corações pesados e uma profunda gratidão, nos reunimos hoje para prestar homenagem à memória de Fulvio Testi, conhecido carinhosamente por todos nós como Fu. Fu não foi apenas o arquiteto por trás do nosso amado Netpanzer, mas também um amigo e inspiração para toda a nossa comunidade. <br> <br>
-                    Ao longo dos anos, Netpanzer tornou-se mais do que apenas um jogo; transformou-se em um ponto de encontro para pessoas de todas as partes do mundo, unidas por um interesse comum e pela paixão que Fu infundiu em cada pixel deste universo virtual. Sua visão criativa e dedicação não apenas nos proporcionaram horas incontáveis de entretenimento, mas também forjaram amizades duradouras que transcenderam as fronteiras do jogo.br <br><br>
-                    Hoje, enquanto lamentamos sua perda, também celebramos o legado que ele deixou para trás. Netpanzer, um jogo que muitos considerariam antigo, continua vivo e pulsante, graças à fundação que Fu construiu. Sua obra não é apenas um testamento de seu talento, mas também um reflexo do calor e da bondade que ele compartilhou com todos nós. <br><br>
-                    Fu, você pode ter nos deixado, mas seu espírito e seu trabalho continuam a brilhar em cada batalha que travamos, em cada estratégia que elaboramos e em cada risada que compartilhamos dentro deste mundo que você criou. Sua partida deixa um vazio em nossos corações, mas também um profundo sentimento de gratidão por tudo que você fez por nós. <br><br>
-                    À sua família e entes queridos, estendemos nossas mais sinceras condolências e agradecimentos por compartilhar Fu conosco. Ele pode ter partido, mas seu legado, assim como as amizades que ele ajudou a forjar, permanecerão conosco para sempre.
-                    <br><br>Com amor e respeito,<br>
-                    A Comunidade Netpanzer</p>
-
-                </p>
-              </div>
-            </article>
+                            </p>
+                        </div>
+                    </article>
 
 
-            <article class="entry">
-              <div class="entry-img">
-                <img src="/static/assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
-              </div>
+                    <article class="entry">
+                        <div class="entry-img">
+                            <img src="/static/assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+                        </div>
 
-              <h2 class="entry-title">
-                <a href="/static/blog/novos_servidores.html">Novos servidores estão chegando.</a>
-              </h2>
+                        <h2 class="entry-title">
+                            <a href="/static/blog/novos_servidores.html">Novos servidores estão chegando.</a>
+                        </h2>
 
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a>Phelipe Figueiredo</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a><time datetime="2020-01-01">Dez
-                        14, 2023</time></a></li>
-                </ul>
-              </div>
+                        <div class="entry-meta">
+                            <ul>
+                                <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a>Phelipe
+                                    Figueiredo</a></li>
+                                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a>
+                                    <time datetime="2020-01-01">Dez
+                                        14, 2023
+                                    </time>
+                                </a></li>
+                            </ul>
+                        </div>
 
-              <div class="entry-content">
-                <p>
-                  Com os novos servidores, a diversão não para por aí. Estamos planejando uma série de eventos
-                  especiais, torneios emocionantes e atualizações empolgantes para acompanhar essa emocionante expansão.
-                  Fique ligado em nossas redes sociais e site oficial para não perder nenhum detalhe.
-                </p>
-                <div class="read-more">
-                  <a href="/static/blog/novos_servidores.html">+</a>
+                        <div class="entry-content">
+                            <p>
+                                Com os novos servidores, a diversão não para por aí. Estamos planejando uma série de
+                                eventos
+                                especiais, torneios emocionantes e atualizações empolgantes para acompanhar essa
+                                emocionante expansão.
+                                Fique ligado em nossas redes sociais e site oficial para não perder nenhum detalhe.
+                            </p>
+                            <div class="read-more">
+                                <a href="/static/blog/novos_servidores.html">+</a>
+                            </div>
+                        </div>
+
+                    </article><!-- End blog entry -->
+
+                    <article class="entry">
+
+                        <div class="entry-img">
+                            <img src="/static/assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
+                        </div>
+
+                        <h2 class="entry-title">
+                            <a href="/static/blog/nova_versão.html">Nova versão a caminho</a>
+                        </h2>
+
+                        <div class="entry-meta">
+                            <ul>
+                                <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a>Phelipe
+                                    Figueiredo</a></li>
+                                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a>
+                                    <time datetime="2020-01-01">Dez
+                                        14, 2023
+                                    </time>
+                                </a></li>
+                            </ul>
+                        </div>
+
+                        <div class="entry-content">
+                            <p>
+                                🚀 Novidades Incríveis na Próxima Versão do NetPanzer! 🎮
+
+                                Olá, comandantes! Estamos empolgados em compartilhar com vocês um vislumbre do que está
+                                por vir na
+                                próxima versão do NetPanzer. Nossa equipe tem trabalhado incansavelmente para aprimorar
+                                a experiência
+                                de jogo e trazer melhorias significativas que certamente irão agradar a todos os fãs de
+                                estratégia em
+                                tempo real.
+                            </p>
+                            <div class="read-more">
+                                <a href="/static/blog/nova_versão.html">+</a>
+                            </div>
+                        </div>
+
+                    </article><!-- End blog entry -->
+
+
                 </div>
-              </div>
 
-            </article><!-- End blog entry -->
-
-            <article class="entry">
-
-              <div class="entry-img">
-                <img src="/static/assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
-              </div>
-
-              <h2 class="entry-title">
-                <a href="/static/blog/nova_versão.html">Nova versão a caminho</a>
-              </h2>
-
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a>Phelipe Figueiredo</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a><time datetime="2020-01-01">Dez
-                        14, 2023</time></a></li>
-                </ul>
-              </div>
-
-              <div class="entry-content">
-                <p>
-                  🚀 Novidades Incríveis na Próxima Versão do NetPanzer! 🎮
-
-                  Olá, comandantes! Estamos empolgados em compartilhar com vocês um vislumbre do que está por vir na
-                  próxima versão do NetPanzer. Nossa equipe tem trabalhado incansavelmente para aprimorar a experiência
-                  de jogo e trazer melhorias significativas que certamente irão agradar a todos os fãs de estratégia em
-                  tempo real.
-                </p>
-                <div class="read-more">
-                  <a href="/static/blog/nova_versão.html">+</a>
-                </div>
-              </div>
-
-            </article><!-- End blog entry -->
-
-
-          </div>
-
+            </div>
         </div>
     </section><!-- End Blog Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h1 class="logo me-auto"><a href="index.html">NETPANZER</a></h1>
-          </div>
-
-
-        </div>
-      </div>
-    </div>
-
-    <div class="container d-md-flex py-4">
-
-      <div class="me-md-auto text-center text-md-start">
-        <div class="copyright">
-          &copy; Copyright <strong><span></span></strong>. Todos os direitos reservados.
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/presento-bootstrap-corporate-template/ -->
-          Designed by <a href="https://bootstrapmade.com/">RipChip</a>
-        </div>
-      </div>
-      <div class="social-links text-center text-md-end pt-3 pt-md-0">
-        <a href="https://www.facebook.com/netpanzeiroswar" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="https://www.instagram.com/netpanzerofc/" class="instagram"><i class="bx bxl-instagram"></i></a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
-  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
-  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
-  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="{% static 'assets/js/main.js' %}"></script>
-
-</body>
-
-</html>
+{% endblock %}
