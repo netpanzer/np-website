@@ -23,7 +23,7 @@ from website.views import clans
 from website.views import ranking
 from website.views import blog
 from website.views import downloads
-from website.views import chat
+from website.views import api_v1_text_announcements
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,4 +34,5 @@ urlpatterns = [
     path('ranking', ranking, name='ranking'),
     path('blog', blog, name='blog'),
     path('downloads', downloads, name='downloads'),
+    path('api/v1/text/announcements/<int:after_id>', api_v1_text_announcements, name='api_v1_text_announcements'),
 ]
