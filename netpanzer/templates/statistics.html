@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}
+    NetPanzer Ranking
+{% endblock %}
+{% block content %}
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li>Statistics</li>
+            </ol>
+            <h2>Statistics</h2>
+        </div>
+    </section><!-- End Breadcrumbs -->
+    <div class="responsive-iframe-container">
+        <iframe src="https://server-browser.netpanzer.com.br/statistics" frameborder="0"></iframe>
+    </div>
+{% endblock %}
