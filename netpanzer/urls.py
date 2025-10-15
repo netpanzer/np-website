@@ -34,5 +34,6 @@ urlpatterns = [
     path('ranking', ranking, name='ranking'),
     path('blog', blog, name='blog'),
     path('downloads', downloads, name='downloads'),
+    path('statistics', downloads, name='statistics'),
     path('api/v1/text/announcements/<int:after_id>', api_v1_text_announcements, name='api_v1_text_announcements'),
 ]

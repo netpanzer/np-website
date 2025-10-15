@@ -35,6 +35,9 @@ def downloads(request):
 def chat(request):
     return render(request, 'chat.html')
 
+def statistics(request):
+    return render(request, 'statistics.html')
+
 
 DELIMITER = "____"
 
