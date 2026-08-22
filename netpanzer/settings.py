@@ -90,10 +90,22 @@ WSGI_APPLICATION = 'website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# The database must live outside the deploy directory in production. Deploys
+# rsync --delete into BASE_DIR, and the database is gitignored, so anything
+# kept there is destroyed on every release - which silently reset the
+# announcements and would wipe all ranking and server history. NP_DB_PATH
+# points somewhere the deploy does not own; the default keeps local
+# development working with no configuration.
+NP_DB_PATH = Path(os.environ.get('NP_DB_PATH') or (BASE_DIR / 'db.sqlite3'))
+
+# Created here rather than in a deploy script so a fresh box, a new target or
+# a local checkout all just work.
+NP_DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': NP_DB_PATH,
     }
 }
 
