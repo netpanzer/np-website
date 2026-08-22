@@ -144,3 +144,24 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Server browser / master server
+
+# The master server speaks a backslash-delimited protocol on TCP 28900. See
+# MASTERSERVER_PORT in the game's src/NetPanzer/Core/NetworkGlobals.hpp.
+NP_MASTER_SERVER = os.environ.get('NP_MASTER_SERVER', 'netpanzer.io')
+NP_MASTER_PORT = int(os.environ.get('NP_MASTER_PORT', '28900'))
+
+# How long the live server list is held in memory before we re-query.
+NP_LIVE_CACHE_SECONDS = int(os.environ.get('NP_LIVE_CACHE_SECONDS', '10'))
+
+# Shared secret for the stats collection endpoint. When empty the endpoint is
+# open (but still throttled), which is fine for local development.
+STATS_COLLECT_TOKEN = os.environ.get('STATS_COLLECT_TOKEN', '')
+
+# How long the per-collection ServerActivitySample rows are kept. These are
+# detail rows only. The permanent history is ServerDailyStat, which is rolled
+# up during ingest and never pruned, so raising or lowering this does not lose
+# any long-term statistics.
+NP_RAW_SAMPLE_RETENTION_DAYS = int(os.environ.get('NP_RAW_SAMPLE_RETENTION_DAYS', '30'))

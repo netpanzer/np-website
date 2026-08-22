@@ -1,19 +1,151 @@
 {% extends "base.html" %}
 {% block title %}
-    NetPanzer Ranking
+    NetPanzer Statistics
 {% endblock %}
 {% block content %}
     <!-- ======= Breadcrumbs ======= -->
     <section class="breadcrumbs">
         <div class="container">
             <ol>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="{% url 'index' %}">Home</a></li>
                 <li>Statistics</li>
             </ol>
             <h2>Statistics</h2>
         </div>
     </section><!-- End Breadcrumbs -->
-    <div class="responsive-iframe-container">
-        <iframe src="https://server-browser.netpanzer.com.br/statistics?language=english" frameborder="0"></iframe>
-    </div>
+
+    <section class="inner-page">
+        <div class="container">
+            <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+                <p class="text-muted mb-2">
+                    Server activity &ndash; {{ activity_range_label|lower }}.
+                    {% if tracking_since %}Tracking since {{ tracking_since }}.{% endif %}
+                </p>
+                <ul class="nav nav-pills mb-2">
+                    {% for key, option in activity_ranges.items %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if key == activity_range %}active{% endif %}"
+                               href="?month={{ month|urlencode }}&amp;sort={{ sort|urlencode }}{% if search %}&amp;q={{ search|urlencode }}{% endif %}&amp;range={{ key|urlencode }}">
+                                {{ option.0 }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Tracked players</h5>
+                            <p class="card-text display-6">{{ total_players }}</p>
+                            <p class="card-text small text-muted">in {{ period_label }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Peak players</h5>
+                            <p class="card-text display-6">{{ peak_players }}</p>
+                            <p class="card-text small text-muted">
+                                on one server{% if busiest_day %}, {{ busiest_day.day }}{% endif %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Average players</h5>
+                            <p class="card-text display-6">{{ average_players }}</p>
+                            <p class="card-text small text-muted">per server</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Days tracked</h5>
+                            <p class="card-text display-6">{{ days_tracked }}</p>
+                            <p class="card-text small text-muted">{{ activity_range_label|lower }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% if top_three %}
+                <div class="row mb-4">
+                    {% for row in top_three %}
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ row.medal }} {{ row.stat.player_name }}</h5>
+                                    <p class="card-text">
+                                        Strength {{ row.stat.strength|floatformat:1 }}
+                                    </p>
+                                    <p class="card-text small text-muted">
+                                        K:{{ row.stat.kills }} &middot;
+                                        D:{{ row.stat.deaths }} &middot;
+                                        P:{{ row.stat.points }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            {% include "_ranking_controls.html" %}
+
+            {% if rows %}
+                <div class="table-responsive">
+                    <table class="table table-striped align-middle">
+                        <thead>
+                            <tr>
+                                <th scope="col">Rank</th>
+                                <th scope="col">Player</th>
+                                <th scope="col">Kills</th>
+                                <th scope="col">Deaths</th>
+                                <th scope="col">Points</th>
+                                <th scope="col">K/D</th>
+                                <th scope="col">Strength</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in rows %}
+                                <tr>
+                                    <td>{{ row.rank }} {% if row.medal %}{{ row.medal }}{% endif %}</td>
+                                    <td>{{ row.stat.player_name }}</td>
+                                    <td>{{ row.stat.kills }}</td>
+                                    <td>{{ row.stat.deaths }}</td>
+                                    <td>{{ row.stat.points }}</td>
+                                    <td>{{ row.stat.kd_ratio|floatformat:2 }}</td>
+                                    <td>{{ row.stat.strength|floatformat:1 }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                {% if page.paginator.num_pages > 1 %}
+                    <nav>
+                        <ul class="pagination">
+                            {% for number in page.paginator.page_range %}
+                                <li class="page-item {% if number == page.number %}active{% endif %}">
+                                    <a class="page-link"
+                                       href="?month={{ month|urlencode }}&amp;sort={{ sort|urlencode }}{% if search %}&amp;q={{ search|urlencode }}{% endif %}{% if activity_range %}&amp;range={{ activity_range|urlencode }}{% endif %}&amp;page={{ number }}">{{ number }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </nav>
+                {% endif %}
+            {% else %}
+                <p>
+                    No statistics for {{ period_label }} yet. Data is collected from the live servers once
+                    a minute, so this fills in as people play.
+                </p>
+            {% endif %}
+        </div>
+    </section>
 {% endblock %}

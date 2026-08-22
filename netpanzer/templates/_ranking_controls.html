@@ -1,0 +1,36 @@
+{% comment %}
+Month picker, sort tabs and search box. Shared by ranking.html and
+statistics.html, which both render the same PlayerMonthStat rows.
+{% endcomment %}
+<form method="get" action="" class="row g-2 align-items-end mb-3">
+    <div class="col-auto">
+        <label class="form-label small text-muted mb-1" for="month">Period</label>
+        <select class="form-select" id="month" name="month" onchange="this.form.submit()">
+            <option value="{{ all_time }}" {% if is_all_time %}selected{% endif %}>All time</option>
+            {% for option in months %}
+                <option value="{{ option }}" {% if option == month %}selected{% endif %}>{{ option }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-auto">
+        <label class="form-label small text-muted mb-1" for="q">Player</label>
+        <input class="form-control" type="text" id="q" name="q" value="{{ search }}" placeholder="Search">
+    </div>
+    <input type="hidden" name="sort" value="{{ sort }}">
+    {% if activity_range %}<input type="hidden" name="range" value="{{ activity_range }}">{% endif %}
+    <div class="col-auto">
+        <button class="btn btn-primary" type="submit">Filter</button>
+    </div>
+</form>
+
+<ul class="nav nav-pills mb-2">
+    {% for mode, description in sort_modes.items %}
+        <li class="nav-item">
+            <a class="nav-link {% if mode == sort %}active{% endif %}"
+               href="?month={{ month|urlencode }}&amp;sort={{ mode|urlencode }}{% if search %}&amp;q={{ search|urlencode }}{% endif %}{% if activity_range %}&amp;range={{ activity_range|urlencode }}{% endif %}">
+                {% if mode == 'kd' %}Kills/Deaths{% else %}{{ mode|capfirst }}{% endif %}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+<p class="small text-muted">{{ sort_description }}</p>

@@ -1,21 +1,113 @@
 {% extends "base.html" %}
 {% block title %}
-    NetPanzer Ranking
+    NetPanzer Server Browser
 {% endblock %}
 {% block content %}
     <!-- ======= Breadcrumbs ======= -->
     <section class="breadcrumbs">
         <div class="container">
             <ol>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="{% url 'index' %}">Home</a></li>
                 <li>Server Browser</li>
             </ol>
             <h2>Server Browser</h2>
         </div>
     </section><!-- End Breadcrumbs -->
-    <section>
-        <div class="responsive-iframe-container">
-            <iframe src="https://server-browser.netpanzer.com.br/?language=english" frameborder="0"></iframe>
+
+    <section class="inner-page">
+        <div class="container">
+            {% if live.error %}
+                <div class="alert alert-warning">
+                    Could not reach the master server right now. Please try again in a moment.
+                </div>
+            {% elif live.stale %}
+                <div class="alert alert-warning">
+                    Showing the last known server list &ndash; the master server did not respond to
+                    the latest refresh.
+                </div>
+            {% endif %}
+
+            <p class="text-muted">
+                {{ live.count }} server{{ live.count|pluralize }} listed,
+                {{ live.total_players }} player{{ live.total_players|pluralize }} online.
+                {% if live.fetched_at %}Updated {{ live.age_seconds }}s ago.{% endif %}
+                You can also join any of these from the in-game <em>Join Game</em> menu.
+            </p>
+
+            {% if live.servers %}
+                <div class="table-responsive">
+                    <table class="table table-striped align-middle">
+                        <thead>
+                            <tr>
+                                <th scope="col">Server</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Map</th>
+                                <th scope="col">Game Style</th>
+                                <th scope="col">Players</th>
+                                <th scope="col">Ping</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for server in live.servers %}
+                                <tr>
+                                    {% if server.online %}
+                                        <td>
+                                            {{ server.name|default:"Unnamed server" }}
+                                            {% if server.password %}<span class="badge bg-secondary">Password</span>{% endif %}
+                                            {% if server.authentication %}<span class="badge bg-secondary">Auth</span>{% endif %}
+                                            {% if server.version %}<div class="small text-muted">v{{ server.version }}</div>{% endif %}
+                                        </td>
+                                        <td><code>{{ server.address }}:{{ server.port }}</code></td>
+                                        <td>{{ server.map|default:"-" }}</td>
+                                        <td>{{ server.game_style|default:"-" }}</td>
+                                        <td>{{ server.num_players }}/{{ server.max_players }}</td>
+                                        <td>{{ server.ping_ms }}ms</td>
+                                    {% else %}
+                                        <td class="text-muted">Not responding</td>
+                                        <td><code>{{ server.address }}:{{ server.port }}</code></td>
+                                        <td colspan="4" class="text-muted">
+                                            Listed by the master server but did not answer a status query.
+                                        </td>
+                                    {% endif %}
+                                </tr>
+                                {% if server.players %}
+                                    <tr>
+                                        <td></td>
+                                        <td colspan="5">
+                                            <table class="table table-sm mb-0">
+                                                <thead>
+                                                    <tr class="small text-muted">
+                                                        <th scope="col">Player</th>
+                                                        <th scope="col">Kills</th>
+                                                        <th scope="col">Deaths</th>
+                                                        <th scope="col">Points</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for player in server.players %}
+                                                        <tr>
+                                                            <td>{{ player.name }}</td>
+                                                            <td>{{ player.kills }}</td>
+                                                            <td>{{ player.deaths }}</td>
+                                                            <td>{{ player.points }}</td>
+                                                        </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                {% endif %}
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% elif not live.error %}
+                <p>No servers are registered with the master server right now.</p>
+            {% endif %}
+
+            <p class="small text-muted">
+                Machine-readable version: <a href="{% url 'api_v1_servers' %}">/api/v1/servers</a>
+            </p>
         </div>
     </section>
 {% endblock %}

@@ -7,13 +7,74 @@
     <section class="breadcrumbs">
         <div class="container">
             <ol>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="{% url 'index' %}">Home</a></li>
                 <li>Ranking</li>
             </ol>
             <h2>Ranking</h2>
         </div>
     </section><!-- End Breadcrumbs -->
-    <div class="responsive-iframe-container">
-        <iframe src="https://server-browser.netpanzer.com.br/ranking?language=english" frameborder="0"></iframe>
-    </div>
+
+    <section class="inner-page">
+        <div class="container">
+            <p class="text-muted">
+                Ranking for {{ period_label }} &ndash;
+                {{ total_players }} player{{ total_players|pluralize }}.
+            </p>
+
+            {% include "_ranking_controls.html" %}
+
+            {% if rows %}
+                <div class="table-responsive">
+                    <table class="table table-striped align-middle">
+                        <thead>
+                            <tr>
+                                <th scope="col">Rank</th>
+                                <th scope="col">Player</th>
+                                <th scope="col">Kills</th>
+                                <th scope="col">Deaths</th>
+                                <th scope="col">Points</th>
+                                <th scope="col">K/D</th>
+                                <th scope="col">Strength</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in rows %}
+                                <tr>
+                                    <td>{{ row.rank }} {% if row.medal %}{{ row.medal }}{% endif %}</td>
+                                    <td>{{ row.stat.player_name }}</td>
+                                    <td>{{ row.stat.kills }}</td>
+                                    <td>{{ row.stat.deaths }}</td>
+                                    <td>{{ row.stat.points }}</td>
+                                    <td>{{ row.stat.kd_ratio|floatformat:2 }}</td>
+                                    <td>{{ row.stat.strength|floatformat:1 }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                {% if page.paginator.num_pages > 1 %}
+                    <nav>
+                        <ul class="pagination">
+                            {% for number in page.paginator.page_range %}
+                                <li class="page-item {% if number == page.number %}active{% endif %}">
+                                    <a class="page-link"
+                                       href="?month={{ month|urlencode }}&amp;sort={{ sort|urlencode }}{% if search %}&amp;q={{ search|urlencode }}{% endif %}&amp;page={{ number }}">{{ number }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </nav>
+                {% endif %}
+            {% else %}
+                <p>
+                    No ranking data for {{ period_label }} yet. Stats are collected from the live servers
+                    once a minute, so this fills in as people play.
+                </p>
+            {% endif %}
+
+            <p class="small text-muted">
+                Machine-readable version: <a href="{% url 'api_v1_ranking' %}?month={{ month|urlencode }}&amp;sort={{ sort|urlencode }}">/api/v1/ranking</a>
+            </p>
+        </div>
+    </section>
 {% endblock %}
