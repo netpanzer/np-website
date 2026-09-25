@@ -13,4 +13,10 @@ from django.core.asgi import get_asgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'netpanzer.settings')
 
-application = get_asgi_application()
+django_application = get_asgi_application()
+from django.conf import settings
+if settings.DEBUG:
+    from django.contrib.staticfiles.handlers import ASGIStaticFilesHandler
+    django_application = ASGIStaticFilesHandler(django_application)
+from website.browser_gateway import BrowserGateway
+application = BrowserGateway(django_application)

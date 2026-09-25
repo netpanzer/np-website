@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from website.views import index
+from website.views import play
 from website.views import history
 from website.views import servers
 from website.views import clans
@@ -32,6 +33,7 @@ from website.views import api_v1_stats_collect
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'), 
+    path('play/', play, name='play'),
     path('history', history, name='history'),
     path('servers', servers, name='servers'),
     path('clans', clans, name='clans'),

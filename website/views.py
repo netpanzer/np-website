@@ -12,6 +12,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 
 from website import services
+from website.web_releases import active_release
 from website.models import (
     Announcement,
     PlayerAllTimeStat,
@@ -66,6 +67,13 @@ DEFAULT_ACTIVITY_RANGE = 'all'
 
 def index(request):
     return render(request, 'index.html')
+
+
+def play(request):
+    release = active_release()
+    response = render(request, 'play.html', {'game_release': release}, status=200 if release else 503)
+    response['Cache-Control'] = 'no-store'
+    return response
 
 
 def history(request):

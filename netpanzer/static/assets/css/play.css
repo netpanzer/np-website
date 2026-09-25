@@ -1,0 +1,15 @@
+.browser-play { padding: 122px 24px 56px; background: #141613; color: #dbdfcc; min-height: 85vh; }
+.play-shell { max-width: 1320px; }
+.play-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; padding-bottom: 18px; border-bottom: 1px solid #454b3a; }
+.play-eyebrow { font: 12px 'Courier New', monospace; color: #bbc478; letter-spacing: .14em; }
+.play-heading h1 { font-family: 'Saira Stencil One', cursive; font-size: clamp(30px, 4vw, 48px); margin: 10px 0 0; font-weight: 400; }
+.browser-play a { color: #d1d878; }
+.play-heading a, .play-notes { font: 12px/1.7 'Courier New', monospace; }
+.play-intro { margin: 18px 0; color: #c6cbbd; font-size: 14px; }
+.play-frame { border: 1px solid #454b3a; background: #080a07; }
+.play-frame iframe { display: block; width: 100%; height: max(620px, calc(100dvh - 240px)); max-height: 980px; border: 0; }
+.play-notes { display: flex; gap: 20px; justify-content: space-between; padding-top: 16px; color: #939c85; }
+.play-notes p { max-width: 78ch; margin: 0; }
+.play-notes a { flex-shrink: 0; }
+.play-unavailable { padding: 80px 24px; text-align: center; border-bottom: 1px solid #454b3a; }
+@media (max-width: 700px) { .browser-play { padding: 105px 8px 30px; } .play-heading, .play-notes { display: block; } .play-heading a { display: inline-block; margin-top: 14px; } .play-notes a { margin-right: 20px; } }

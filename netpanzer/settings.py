@@ -177,3 +177,8 @@ STATS_COLLECT_TOKEN = os.environ.get('STATS_COLLECT_TOKEN', '')
 # up during ingest and never pruned, so raising or lowering this does not lose
 # any long-term statistics.
 NP_RAW_SAMPLE_RETENTION_DAYS = int(os.environ.get('NP_RAW_SAMPLE_RETENTION_DAYS', '30'))
+
+# Assets survive rsync --delete, just like the production database.
+NP_WEB_ROOT = Path(os.environ.get('NP_WEB_ROOT') or (NP_DB_PATH.parent / 'browser-game'))
+NP_WEB_MAX_CONNECTIONS = int(os.environ.get('NP_WEB_MAX_CONNECTIONS', '64'))
+NP_WEB_MAX_CONNECTIONS_PER_IP = int(os.environ.get('NP_WEB_MAX_CONNECTIONS_PER_IP', '8'))

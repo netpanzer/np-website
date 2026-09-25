@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Play NetPanzer — Browser Battlefield{% endblock %}
+{% block extra_head %}<link href="{% static 'assets/css/play.css' %}" rel="stylesheet">{% endblock %}
+{% block content %}
+<section class="browser-play">
+  <div class="container-fluid play-shell">
+    <div class="play-heading">
+      <div><span class="play-eyebrow">NETPANZER / BROWSER EDITION</span><h1>Join the battlefield.</h1></div>
+      <a href="https://github.com/netpanzer/netpanzer/releases">Prefer the desktop client? ↗</a>
+    </div>
+    {% if game_release %}
+      <p class="play-intro">The original game, in Chrome and Firefox. Choose <strong>Join</strong>, pick a public server, then click <strong>Play</strong>.</p>
+      <div class="play-frame">
+        <iframe title="NetPanzer browser game" allow="fullscreen; autoplay" allowfullscreen
+          src="/play/client/{{ game_release.release }}/index.html?embedded=1&amp;public=1&amp;network=/play/"
+          referrerpolicy="same-origin"></iframe>
+      </div>
+      <div class="play-notes">
+        <p>Keyboard + mouse required. First load downloads roughly 125 MB before compression. Hosting is desktop-only; join any public NetPanzer server.</p>
+        <a href="https://github.com/netpanzer/netpanzer/tree/{{ game_release.release }}">Build {{ game_release.release|slice:':8' }} / source</a>
+        <a href="/play/client/{{ game_release.release }}/COPYING.txt">GPL v2+</a>
+      </div>
+    {% else %}
+      <div class="play-unavailable" role="status">
+        <h2>The browser battlefield is being prepared.</h2>
+        <p>Please check back shortly. You can still play using the desktop client.</p>
+        <a class="get-started-btn" href="https://github.com/netpanzer/netpanzer/releases">Download NetPanzer</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

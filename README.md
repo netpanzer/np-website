@@ -38,3 +38,10 @@ Then run it!
 ```
 python3.11 manage.py runserver
 ```
+
+### Browser game
+
+The `/play/` integration, CI artifact promotion and production rollout are
+documented in [deploy/BROWSER.md](deploy/BROWSER.md). Gameplay requires the ASGI
+runner used by `run.sh`; Django's development `runserver` alone does not provide
+the WebSocket gateway.
